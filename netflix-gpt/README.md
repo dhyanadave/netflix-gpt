@@ -1,6 +1,15 @@
 # Netflix-GPT
 - Create React App
 - Configured Tailwind CSS
+- Header
+- Routing
+- Login form
+- Signup Form (If very large form, consider using formik library)
+- Form validation
+- useRef Hook
+- Firebase Setup
+- Deploying app to production
+- Create SignUp user account in Firebase
 
 # Features
 -Login/Signup
