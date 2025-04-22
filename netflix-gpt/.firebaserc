@@ -1,5 +1,15 @@
 {
   "projects": {
-    "default": "netflixgpt-64274"
+    "default": "netflixgpt-64274",
+    " portfolio": "netflixgpt-64274"
+  },
+  "targets": {
+    "netflixgpt-64274": {
+      "hosting": {
+        "my-portfolio-app-net-clone": [
+          "my-portfolio-app-net-clone"
+        ]
+      }
+    }
   }
 }

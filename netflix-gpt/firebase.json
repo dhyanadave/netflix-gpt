@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "build",
+    "site": "my-portfolio-app-net-clone",
     "ignore": [
       "firebase.json",
       "**/.*",

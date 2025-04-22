@@ -5,9 +5,6 @@ export const checkValidData = (name, email, password) => {
   const isPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z0-9])([^\s]){8,}$/.test(
     password
   );
-
-  console.log("isEmailValid", isEmailValid);
-  console.log("isPWDValid", isPassword);
   
   // Name validation only if name is provided (i.e. during Sign Up)
   if (name !== "" && name.trim().length === 0) {

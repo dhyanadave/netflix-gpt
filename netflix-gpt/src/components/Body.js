@@ -8,8 +8,6 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utils/firebase";
 
 const Body = () => {
-  const dispatch = useDispatch();
-
   const appRouter = createBrowserRouter([
     {
       path: "/",
@@ -20,21 +18,6 @@ const Body = () => {
       element: <Browse />,
     },
   ]);
-
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // User is signed in
-        const { uid, email, displayName, photoURL } = user;
-        dispatch(addUser({ uid: uid, email: email, displayName: displayName, photoURL: photoURL }));
-        // navigate("/browse") => can't do this as we are outside of RouterProvider
-      } else {
-        // User is signed out
-        dispatch(removeUser());
-        // navigate("/") => can't do this as we are outside of RouterProvider
-      }
-    });
-  }, []);
 
   return (
     <div>
