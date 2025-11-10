@@ -9,7 +9,7 @@ import {
 import { auth } from "../utils/firebase";
 import { addUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux";
-import { USER_AVATAR } from "../utils/constants";
+import { BG_URL, USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -51,11 +51,16 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: USER_AVATAR ,
+            photoURL: USER_AVATAR,
           }).then(() => {
             const { uid, email, displayName, photoURL } = auth.currentUser; //updated auth with displayName and photoURL
             dispatch(
-              addUser({ uid: uid, email: email, displayName: displayName, photoURL: photoURL })
+              addUser({
+                uid: uid,
+                email: email,
+                displayName: displayName,
+                photoURL: photoURL,
+              })
             );
           });
           //signin automatically
@@ -92,10 +97,7 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/42a0bce6-fc59-4c1c-b335-7196a59ae9ab/web/IN-en-20250303-TRIFECTA-perspective_d5f81427-d6cf-412d-8e86-2315671b9be1_large.jpg"
-          defaultValue={"Body img"}
-        />
+        <img src={BG_URL} defaultValue={"Body img"} />
       </div>
 
       <form

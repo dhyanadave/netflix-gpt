@@ -32,6 +32,7 @@
 - TMDB Image CDN Url
 - Made the browse page amazing with Tailwind CSS
 - usePopularMovies, useTopRatedMovies and useUpcomingMovies Custom hook
+- GPT Search
 
 # Features
 - Login/Signup
